@@ -1,0 +1,135 @@
+/* ============================================= */
+/* Sub-Folder Imports */
+/* ============================================= */
+/* ============================================= */
+/* Utilities Imports */
+/* ============================================= */
+/* ============================================= */
+/* Base Imports */
+/* ============================================= */
+/* ============================================= */
+/*              Base styles                      */
+/* ============================================= */
+main {
+  z-index: -1;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* ============================================= */
+/* Components Imports */
+/* ============================================= */
+/* ============================================= */
+/*              Images                           */
+/* ============================================= */
+.logo {
+  font-family: "Calligraffitti", cursive;
+  font-size: 2.3em;
+}
+
+.img-thumbnail {
+  width: 300px;
+  height: 300px;
+}
+
+.img-fluid {
+  height: 500px;
+}
+
+.skills img {
+  width: 2em;
+  height: 8em;
+}
+
+.svg-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #4691f6;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+
+/* ===================================== 
+  Main Layout
+======================================== */
+.navbar {
+  background-color: #34495E;
+  padding: 0;
+}
+
+.jumbotron {
+  background-color: #CCCCCC;
+  color: #4D7CAB;
+}
+
+.card-btn {
+  background-color: #5E84AB;
+}
+
+/* ===================================== 
+  overlay
+======================================== */
+#slice {
+  width: 100%;
+  max-height: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 500px;
+  z-index: 2;
+}
+
+#slice img {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+#slice div {
+  position: absolute;
+  z-index: 3;
+  background-repeat: no-repeat;
+  transform: rotateY(-90deg) scale(0.5);
+  transform-origin: center center;
+  opacity: 0;
+  transition: all 1.5s cubic-bezier(0.71, 0.05, 0.09, 0.5);
+}
+
+#slice.active div {
+  opacity: 1;
+  transform: rotate(0deg) translateY(0);
+  transition-delay: 0.5s;
+}
+
+#slice-button {
+  position: absolute;
+  top: 65%;
+  left: 42%;
+  z-index: 3;
+}
+
+#daily-quotes {
+  position: relative;
+  margin-top: 150px;
+  left: 5%;
+  width: 800px;
+  font-size: 2em;
+  z-index: 3;
+}
+
+.overlay-btn {
+  padding: 10px 40px;
+}
+
+/*# sourceMappingURL=styles.css.map */
