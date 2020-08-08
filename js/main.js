@@ -21,7 +21,7 @@ fetch(quoteURL)
 
 
     function slice () {
-        document.getElementsByClassName("navbar")[0].style.opacity = "0"
+        document.getElementsByClassName("navbar")[0].style.opacity = "0";
         for (x = 0; x < gridX; x++) {
             if (mediaQuery.matches){
             const width = x * w / gridX + "px";
@@ -42,6 +42,7 @@ fetch(quoteURL)
                 button.style.display = "none";
                 dailyQuotes.style.display = "none";
                 document.getElementsByClassName("navbar")[0].style.opacity = ".7"
+                body.style.overflow = "visible";
             }
 
         } 
@@ -69,7 +70,6 @@ button.addEventListener("click", () => {
             button.style.display = "none"
             body.style.overflow = "visible";
             document.getElementById("daily-quotes").style.display = "none"
-
             // // window.onbeforeunload = function () {
             // //     window.scrollTo(0, 0);
             //   }      
@@ -123,25 +123,19 @@ function footerQuotes (){
 
     if (author === null){
         quoteHTML += `
-        <div id="quote">
         <p>"${quoteDay}"</p>
         <p>"Anonymous"</p>
-        </div>
-        </div>
         `
     } else { 
         quoteHTML += `
-        <div id="quote">
         <q>${quoteDay}</q>
         <p> - ${author}</p>
-        </div>
-        </div>
         `
         }
 
         footerQuote.innerHTML = quoteHTML;  
 
-    },7000)           
+    },5000)           
   
 }
 
