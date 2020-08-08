@@ -62,18 +62,17 @@ body {
 /* ===================================== 
   Main Layout
 ======================================== */
-.navbar {
+.navbar, .card-header {
   background-color: #34495E;
   padding: 0;
 }
 
-.jumbotron {
-  background-color: #CCCCCC;
-  color: #4D7CAB;
+.card-btn, .jumbotron {
+  background-color: #46637f;
 }
 
 .card-btn {
-  background-color: #5E84AB;
+  width: 7em;
 }
 
 /* ===================================== 

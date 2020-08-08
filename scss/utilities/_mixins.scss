@@ -1,0 +1,17 @@
+// Media Queries
+@mixin mquery ($break) {
+    $value: map-get($breakpoints, $break);
+    $s: map-get($breakpoints, 's');
+  
+    @if $value < $s {
+      @media (min-width: $value) {
+        @content;
+      } 
+    } @else {
+        @media (min-width: $value) {
+          @content;       
+        }             
+  
+      }
+    }
+  

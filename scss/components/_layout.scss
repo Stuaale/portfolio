@@ -2,19 +2,19 @@
   Main Layout
 ======================================== */
 
-.navbar{
-  background-color: #34495E;
+.navbar,.card-header{
+  background-color: $primary-color;
   padding: 0;
 
 }
 
-.jumbotron{
-  background-color: #CCCCCC;
-  color: #4D7CAB;
+
+.card-btn, .jumbotron{
+  background-color: lighten($primary-color, 10%);
 }
+
 
 .card-btn{
-  background-color: #5E84AB;
+  width: 7em;
 }
-
  
