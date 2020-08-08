@@ -1,8 +1,7 @@
-
 let quotes = [];
 const dailyQuotes = document.getElementById("daily-quotes");
 const footerQuote = document.getElementById("footer-quotes")
-const body = document.getElementById("body-container");
+const body = document.getElementById("body");
 const quoteURL = "https://type.fit/api/quotes";
 const sliceDiv = document.getElementById('slice');
 const gridX = 2;
@@ -41,7 +40,8 @@ fetch(quoteURL)
              } else{
                 sliceDiv.classList.remove('active');
                 button.style.display = "none";
-
+                dailyQuotes.style.display = "none";
+                document.getElementsByClassName("navbar")[0].style.opacity = ".7"
             }
 
         } 
@@ -99,19 +99,13 @@ function displayQuotes (data){
     let author = randomIndex.author;
     if (author === null){
         quoteHTML += `
-        <div id="quote">
         <q>${quoteDay}</q>
         <p> - Anonymous</p>
-        </div>
-        </div>
         `
     } else { 
         quoteHTML += `
-        <div id="quote">
         <q>${quoteDay}</q>
         <p> - ${author}</p>
-        </div>
-        </div>
         `
         }
 dailyQuotes.innerHTML = quoteHTML;

@@ -14,7 +14,7 @@ main {
   z-index: -1;
 }
 
-.body-container {
+body {
   overflow: hidden;
 }
 
