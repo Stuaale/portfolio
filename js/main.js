@@ -38,7 +38,7 @@ fetch(quoteURL)
             sliceDiv.classList.add('active');  
             
              } else{
-                sliceDiv.classList.remove('active');
+                sliceDiv.style.display = "none";
                 button.style.display = "none";
                 dailyQuotes.style.display = "none";
                 document.getElementsByClassName("navbar")[0].style.opacity = ".7"
