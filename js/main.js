@@ -173,3 +173,23 @@ function footerQuotes (){
 //        }
 //       )}
 
+let backToTop = document.getElementById("backToTop")
+
+window.onscroll = function () {scroll()};
+
+function scroll (){
+  if (document.body.scrollTop > 40 ||
+     document.documentElement.scrollTop > 40) {
+
+        backToTop.style.opacity = ".8";
+     } else {
+        backToTop.style.opacity = "0"
+     }
+  }
+
+backToTop.addEventListener("click", () => {
+    window.scrollTo({top: 0, behavior: 'smooth'})
+})  
+
+
+
