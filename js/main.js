@@ -38,7 +38,8 @@ fetch(quoteURL)
             sliceDiv.classList.add('active');  
             
              } else{
-                sliceDiv.style.display = "none";
+                sliceDiv.classList.remove('active');
+                sliceDiv.style.display = "none"
                 button.style.display = "none";
                 dailyQuotes.style.display = "none";
                 document.getElementsByClassName("navbar")[0].style.opacity = ".7"
@@ -138,4 +139,37 @@ function footerQuotes (){
     },5000)           
   
 }
+
+//Vidoeo on contact Page
+// var API_KEY = '5438713-5d54e01959eec95c9e3348f44';
+// var videoURL = "https://pixabay.com/api/videos/?key="+API_KEY+"&q="+encodeURIComponent('form');
+// let videos = [];
+// const videoElement = document.getElementById("video")
+
+
+
+
+
+// fetch(videoURL)
+
+// .then(response => response.json())
+// .then(data => data.hits)
+// .then(displayVideo)
+// .catch(err => console .log(err))
+
+// function displayVideo (videoData){
+//     let html = " ";
+//     videos = videoData;
+//     videos.map((video) => {
+
+//        let videoSelect = video.videos.small.url
+
+//        console.log(videoSelect)
+
+//           html = `<video src="${videoSelect}" controls autoplay w-100 p-0 mr-0"></video>`
+//           html.autoplay = true;
+//           videoElement.innerHTML = html;
+
+//        }
+//       )}
 

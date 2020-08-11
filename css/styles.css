@@ -67,12 +67,53 @@ body {
   padding: 0;
 }
 
+.header-img {
+  height: 27rem;
+}
+
 .card-btn, .jumbotron {
   background-color: #46637f;
 }
 
 .card-btn {
   width: 7em;
+}
+
+.card-cv {
+  background-color: #46637f;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.01);
+}
+
+a.social-icons {
+  background-image: url(images/SVG/linkedin.svg);
+}
+
+.video {
+  opacity: 50%;
+}
+@media (min-width: 768px) {
+  .video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+}
+
+.contact-container {
+  background-color: white;
+}
+@media (min-width: 768px) {
+  .contact-container {
+    margin-top: 3.5rem;
+    background-color: #88a2bd;
+    opacity: 75%;
+  }
 }
 
 /* ===================================== 
