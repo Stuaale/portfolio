@@ -11,17 +11,15 @@ const img = document.querySelectorAll('#slice img')[0].src;
 const delay = 0.1;
 const button = document.getElementById("slice-button");
 const mediaQuery = window.matchMedia("(min-width: 768px)")
+const backToTop = document.getElementById("backToTop")
 
-fetch(quoteURL)
-.then(response => response.json())
-.then(data => displayQuotes(data))
-.then(data => footerQuotes(data))
-.catch(err => console .log(err))
 
+//These functions hand the overlay page on original load on first session page load
 
 
     function slice () {
         document.getElementsByClassName("navbar")[0].style.opacity = "0";
+        backToTop.style.opacity = 0;
         for (x = 0; x < gridX; x++) {
             if (mediaQuery.matches){
             const width = x * w / gridX + "px";
@@ -35,7 +33,8 @@ fetch(quoteURL)
             div.style.backgroundPosition = "-" + width;
             div.style.backgroundSize = w + "px";
             div.style.transitionDelay = x * delay + "s";
-            sliceDiv.classList.add('active');  
+            sliceDiv.classList.add('active'); 
+ 
             
              } else{
                 sliceDiv.classList.remove('active');
@@ -57,6 +56,7 @@ button.addEventListener("click", () => {
     button.style.display = "none"
     body.style.overflow = "visible";
     document.getElementById("daily-quotes").style.display = "none"
+
     reset();
     sessionStorage.setItem("show", "true")
     footerQuote();
@@ -71,14 +71,9 @@ button.addEventListener("click", () => {
             button.style.display = "none"
             body.style.overflow = "visible";
             document.getElementById("daily-quotes").style.display = "none"
-            // // window.onbeforeunload = function () {
-            // //     window.scrollTo(0, 0);
-            //   }      
 
         }
 } 
-
-
 
 function reset (){
     setTimeout( ( () => sliceDiv.style.display = "none" ), 2000);
@@ -88,9 +83,15 @@ function delayNavBar (){
     let navbar = document.getElementsByClassName("navbar")[0];
     setTimeout( ( () => navbar.style.opacity = .7 ), 500);
     navbar.style.transition = "opacity ease-in 0.5s";
-
-
 } 
+
+// This function selects a random quote from the API and displays it on the overlay
+
+fetch(quoteURL)
+.then(response => response.json())
+.then(data => displayQuotes(data))
+.then(data => footerQuotes(data))
+.catch(err => console .log(err))
 
 function displayQuotes (data){
     quotes = data;
@@ -111,6 +112,8 @@ function displayQuotes (data){
         }
 dailyQuotes.innerHTML = quoteHTML;
 }
+
+//This function insert quotes into the bottom of the main and about pages
 
 function footerQuotes (){
     if (footerQuote.innerHTML = " "){
@@ -140,47 +143,16 @@ function footerQuotes (){
   
 }
 
-//Vidoeo on contact Page
-// var API_KEY = '5438713-5d54e01959eec95c9e3348f44';
-// var videoURL = "https://pixabay.com/api/videos/?key="+API_KEY+"&q="+encodeURIComponent('form');
-// let videos = [];
-// const videoElement = document.getElementById("video")
+//end of quote functions
 
 
-
-
-
-// fetch(videoURL)
-
-// .then(response => response.json())
-// .then(data => data.hits)
-// .then(displayVideo)
-// .catch(err => console .log(err))
-
-// function displayVideo (videoData){
-//     let html = " ";
-//     videos = videoData;
-//     videos.map((video) => {
-
-//        let videoSelect = video.videos.small.url
-
-//        console.log(videoSelect)
-
-//           html = `<video src="${videoSelect}" controls autoplay w-100 p-0 mr-0"></video>`
-//           html.autoplay = true;
-//           videoElement.innerHTML = html;
-
-//        }
-//       )}
-
-let backToTop = document.getElementById("backToTop")
+//This function supports the back to top scroll functionality
 
 window.onscroll = function () {scroll()};
 
 function scroll (){
   if (document.body.scrollTop > 40 ||
      document.documentElement.scrollTop > 40) {
-
         backToTop.style.opacity = ".8";
      } else {
         backToTop.style.opacity = "0"
@@ -191,5 +163,6 @@ backToTop.addEventListener("click", () => {
     window.scrollTo({top: 0, behavior: 'smooth'})
 })  
 
+//end
 
 

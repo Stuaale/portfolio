@@ -127,6 +127,14 @@ a.social-icons {
   cursor: pointer;
 }
 
+.arrow {
+  opacity: 90%;
+}
+.arrow:hover {
+  opacity: 100%;
+  transform: scale(1.3);
+}
+
 /* ===================================== 
   overlay
 ======================================== */

@@ -65,7 +65,13 @@ a.social-icons{
   border-radius: 50%;
   transition: opacity .6s ease-in-out;
   width: 2.5rem;
-  cursor: pointer;
+  cursor: pointer;  
+}
 
-  
+.arrow{
+  opacity: 90%;
+  &:hover{
+  opacity: 100%;
+  transform: scale(1.3);
+  }
 }
