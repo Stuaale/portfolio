@@ -62,14 +62,17 @@ body {
 /* ===================================== 
   Main Layout
 ======================================== */
+p {
+  word-break: break-word;
+}
+
 body, .navbar {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 .navbar, .card-header {
   background-color: #34495E;
-  padding: 0;
 }
 
 .header-img {
@@ -134,7 +137,7 @@ body, .navbar {
 
 .fade-in {
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transition: opacity 1.5s ease-in;
 }
 
 .fade-in.appear {
@@ -144,11 +147,13 @@ body, .navbar {
 .from-right {
   transform: translateX(-70%);
   opacity: 0;
+  overflow: hidden;
 }
 
 .from-left {
   transform: translateX(70%);
   opacity: 0;
+  overflow: hidden;
 }
 
 .from-right, .from-left {
@@ -178,45 +183,56 @@ body, .navbar {
   }
   15% {
     transform: translateY(0);
-    padding-bottom: 5px;
+    padding-bottom: 7px;
   }
   30% {
     transform: translateY(-50%);
   }
   40% {
     transform: translateY(0%);
-    padding-bottom: 6px;
+    padding-bottom: 8px;
   }
   50% {
     transform: translateY(-30%);
   }
   70% {
     transform: translateY(0%);
-    padding-bottom: 7px;
+    padding-bottom: 9px;
   }
   80% {
     transform: translateY(-15%);
   }
   90% {
     transform: translateY(0%);
-    padding-bottom: 8px;
+    padding-bottom: 10px;
   }
   95% {
     transform: translateY(-7%);
   }
   97% {
     transform: translateY(0%);
-    padding-bottom: 9px;
+    padding-bottom: 11px;
   }
   99% {
     transform: translateY(-3%);
   }
   100% {
     transform: translateY(0);
-    padding-bottom: 9px;
+    padding-bottom: 11px;
     opacity: 1;
   }
 }
+.social-icon {
+  opacity: 80%;
+}
+.social-icon:hover {
+  opacity: 100%;
+}
+
+.jumbotron {
+  min-height: 15rem;
+}
+
 /* ===================================== 
   overlay
 ======================================== */
