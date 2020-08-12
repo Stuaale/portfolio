@@ -53,6 +53,10 @@ body, .navbar{
   background-color: lighten($primary-color, 35%);
   opacity: 75%;
 }
+@include mquery ('l'){
+  margin-top: 12.5rem;
+
+}
 }
 
 #backToTop{
@@ -83,17 +87,21 @@ body, .navbar{
   opacity: 1;
 }
 
+
+
 .from-right{
-  transform: translateX(-70%);
+  transform: translateX(-50%);
   opacity: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+
 
 }
 
 .from-left{
-  transform: translateX(70%);
+  transform: translateX(50%);
   opacity: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+
 
 }
 

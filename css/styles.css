@@ -14,7 +14,7 @@ main {
   z-index: -1;
 }
 
-body {
+#body {
   overflow: hidden;
 }
 
@@ -115,6 +115,11 @@ body, .navbar {
     opacity: 75%;
   }
 }
+@media (min-width: 992px) {
+  .contact-container {
+    margin-top: 12.5rem;
+  }
+}
 
 #backToTop {
   position: fixed;
@@ -145,15 +150,15 @@ body, .navbar {
 }
 
 .from-right {
-  transform: translateX(-70%);
+  transform: translateX(-50%);
   opacity: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .from-left {
-  transform: translateX(70%);
+  transform: translateX(50%);
   opacity: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .from-right, .from-left {
