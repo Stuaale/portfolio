@@ -2,6 +2,10 @@
   Main Layout
 ======================================== */
 
+body, .navbar{
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
 .navbar,.card-header{
   background-color: $primary-color;
@@ -26,13 +30,8 @@
   background-color:lighten($primary-color, 10%);
 }
 
-.portfolio-card:hover{
-  transform: scale(1.01);
-}
 
-a.social-icons{
-  background-image: url(images/SVG/linkedin.svg);
-}
+
 
 
 
@@ -73,5 +72,96 @@ a.social-icons{
   &:hover{
   opacity: 100%;
   transform: scale(1.3);
+  }
+}
+
+.fade-in{
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.appear {
+  opacity: 1;
+}
+
+.from-right{
+  transform: translateX(-70%);
+  opacity: 0;
+
+}
+
+.from-left{
+  transform: translateX(70%);
+  opacity: 0;
+
+}
+
+.from-right,.from-left{
+    transition: opacity 1s ease-in, transform .5s ease-in;
+}
+
+.slide-in.appear{
+  transform: translate(0);
+  opacity: 1;
+  &:hover{
+    transform: scale(1.01)
+  }
+
+}
+
+
+.icon.appear{
+  animation: bounce 1.5s ease-out;
+}
+
+
+@keyframes bounce {
+  0% {
+	transform:translateY(-100%);
+    opacity: 0;
+  }
+  5% {
+  	transform:translateY(-100%);
+    opacity: 0;
+  }
+  15% {
+  	transform:translateY(0);
+    padding-bottom: 5px;
+  }
+  30% {
+  	transform:translateY(-50%);
+  }
+  40% {
+  	transform:translateY(0%);
+    padding-bottom: 6px;
+  }
+  50% {
+  	transform:translateY(-30%);
+  }
+  70% {
+  	transform:translateY(0%);
+    padding-bottom: 7px;
+  }
+  80% {
+  	transform:translateY(-15%);
+  }
+  90% {
+  	transform:translateY(0%);
+  	padding-bottom: 8px;
+  }
+  95% {
+  	transform:translateY(-7%);
+  }
+  97% {
+  	transform:translateY(0%);
+  	padding-bottom: 9px;
+  }
+  99% {
+  	transform:translateY(-3%);
+  }
+  100% {
+  	transform:translateY(0);
+  	padding-bottom: 9px;
+    opacity: 1;
   }
 }

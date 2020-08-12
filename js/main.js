@@ -151,8 +151,8 @@ function footerQuotes (){
 window.onscroll = function () {scroll()};
 
 function scroll (){
-  if (document.body.scrollTop > 40 ||
-     document.documentElement.scrollTop > 40) {
+  if (document.body.scrollTop > 160 ||
+     document.documentElement.scrollTop > 160) {
         backToTop.style.opacity = ".8";
      } else {
         backToTop.style.opacity = "0"
@@ -166,3 +166,37 @@ backToTop.addEventListener("click", () => {
 //end
 
 
+const fade = document.querySelector(".fade-in");
+const slide = document.querySelectorAll(".slide-in")
+const icons = document.querySelectorAll(".icon")
+const appearOptions ={
+    root: null, //identifies the parent element that the obeserver is tied to, usually the viewport by default
+    threshold: 0.1, //indicates how much of the target needs to be in view for trigger
+    rootMargin: "0px 0px 0px 0px" // allows you to control the area size(bounding box) that the target elemtn scrolls
+};
+
+const appearOnScroll = new IntersectionObserver (function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting){
+          return;
+      }  else {
+         entry.target.classList.add("appear");
+         appearOnScroll.unobserve(entry.target)
+      }
+    });
+}, appearOptions)
+
+// fade.forEach( fader => {
+//     appearOnScroll.observe(fader);
+// })
+
+
+appearOnScroll.observe(fade)
+
+slide.forEach(slider => {
+    appearOnScroll.observe(slider)
+})
+
+icons.forEach(icon  => {
+    appearOnScroll.observe(icon)
+})
