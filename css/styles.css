@@ -147,8 +147,10 @@ body, .navbar {
   transform: scale(1.01);
 }
 
-.icon.appear {
-  animation: bounce 2s ease-out;
+@media (min-width: 540px) {
+  .icon.appear {
+    animation: bounce 2s ease-out;
+  }
 }
 
 @keyframes bounce {

@@ -116,11 +116,11 @@ dailyQuotes.innerHTML = quoteHTML;
 
 //This function insert quotes into the bottom of the main and about pages
 
+
 function footerQuotes (){
     if (footerQuote.innerHTML = " "){
         footerQuote.innerText === "Test"
    }
-    setInterval(() => { 
     let quoteHTML = " ";
     let randomIndex = quotes[Math.floor(Math.random() * quotes.length)];
     let quoteDay = randomIndex.text;
@@ -137,12 +137,14 @@ function footerQuotes (){
         <p> - ${author}</p>
         `
         }
-
-        footerQuote.innerHTML = quoteHTML;  
-
-    },5000)           
+    footerQuote.innerHTML = quoteHTML;           
   
 }
+
+function interval (){
+setInterval(footerQuotes,5000)
+}
+interval();
 
 //end of quote functions
 
@@ -205,21 +207,27 @@ icons.forEach(icon  => {
 
 //Contact from Modal
 
-let contactBtn = document.getElementById("body");
+let contactBtn = document.querySelector(".contact");
+let footerBtn = document.querySelector(".footer-btn")
 const contactForm = document.querySelector(".contact-form");
 const closeBtn = document.getElementById("close");
 
 console.log(closeBtn)
 
 
-contactBtn.addEventListener("click", (e) => {
-    if (e.target.className !== "body"){
-    contactBtn = e.target
+contactBtn.addEventListener("click", () => {
     navbar.style.display = "none"
     contactForm.style.display = "block"
     } 
 
-});
+);
+
+footerBtn.addEventListener("click", () => {
+    navbar.style.display = "none"
+    contactForm.style.display = "block"
+    } 
+
+);
 
 closeBtn.addEventListener("click", () => {
     navbar.style.display = "block"
