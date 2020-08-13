@@ -12,13 +12,14 @@ const delay = 0.1;
 const button = document.getElementById("slice-button");
 const mediaQuery = window.matchMedia("(min-width: 768px)")
 const backToTop = document.getElementById("backToTop")
+const navbar = document.getElementsByClassName("navbar")[0];
 
 
 //These functions hand the overlay page on original load on first session page load
 
 
     function slice () {
-        document.getElementsByClassName("navbar")[0].style.opacity = "0";
+        navbar.style.opacity = "0";
         backToTop.style.opacity = 0;
         for (x = 0; x < gridX; x++) {
             if (mediaQuery.matches){
@@ -41,8 +42,9 @@ const backToTop = document.getElementById("backToTop")
                 sliceDiv.style.display = "none"
                 button.style.display = "none";
                 dailyQuotes.style.display = "none";
-                document.getElementsByClassName("navbar")[0].style.opacity = ".7"
-                body.style.overflow = "visible";
+                navbar.style.opacity = ".7"
+                body.style.overflowY = "visible";
+
             }
 
         } 
@@ -54,7 +56,7 @@ button.addEventListener("click", () => {
     delayNavBar();
     sliceDiv.classList.remove('active');
     button.style.display = "none"
-    body.style.overflow = "visible";
+    body.style.overflowY = "visible";
     document.getElementById("daily-quotes").style.display = "none"
 
     reset();
@@ -66,10 +68,10 @@ button.addEventListener("click", () => {
   window.onload = function () {
     const show = sessionStorage.getItem("show");
         if (show === "true"){    
-            document.getElementsByClassName("navbar")[0].style.opacity = .7
+            navbar.style.opacity = .7
             sliceDiv.style.display = "none";
             button.style.display = "none"
-            body.style.overflow = "visible";
+            body.style.overflowY = "visible";
             document.getElementById("daily-quotes").style.display = "none"
 
         }
@@ -80,7 +82,6 @@ function reset (){
 } 
 
 function delayNavBar (){
-    let navbar = document.getElementsByClassName("navbar")[0];
     setTimeout( ( () => navbar.style.opacity = .7 ), 500);
     navbar.style.transition = "opacity ease-in 0.5s";
 } 
@@ -128,7 +129,7 @@ function footerQuotes (){
     if (author === null){
         quoteHTML += `
         <p>"${quoteDay}"</p>
-        <p>"Anonymous"</p>
+        <p>"- Anonymous"</p>
         `
     } else { 
         quoteHTML += `
@@ -177,7 +178,7 @@ const appearOptions ={
 
 const appearOnScroll = new IntersectionObserver (function(entries, appearOnScroll) {
     entries.forEach(entry => {
-      if (!entry.isIntersecting){
+      if (!entry.isIntersecting){          
           return;
       }  else {
          entry.target.classList.add("appear");
@@ -200,3 +201,29 @@ slide.forEach(slider => {
 icons.forEach(icon  => {
     appearOnScroll.observe(icon)
 })
+
+
+//Contact from Modal
+
+let contactBtn = document.getElementById("body");
+const contactForm = document.querySelector(".contact-form");
+const closeBtn = document.getElementById("close");
+
+console.log(closeBtn)
+
+
+contactBtn.addEventListener("click", (e) => {
+    if (e.target.className !== "body"){
+    contactBtn = e.target
+    navbar.style.display = "none"
+    contactForm.style.display = "block"
+    } 
+
+});
+
+closeBtn.addEventListener("click", () => {
+    navbar.style.display = "block"
+    contactForm.style.display = "none"
+});
+
+

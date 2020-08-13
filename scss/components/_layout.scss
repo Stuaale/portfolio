@@ -34,30 +34,7 @@ body, .navbar{
   background-color:lighten($primary-color, 10%);
 }
 
-.video{
-  opacity: 50%;
-  @include mquery ('m'){
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-}
-}
 
-.contact-container{
-  background-color: white;
-  @include mquery ('m'){
-  margin-top: 3.5rem;
-  background-color: lighten($primary-color, 35%);
-  opacity: 75%;
-}
-@include mquery ('l'){
-  margin-top: 12.5rem;
-
-}
-}
 
 #backToTop{
   position: fixed;
@@ -106,7 +83,7 @@ body, .navbar{
 }
 
 .from-right,.from-left{
-    transition: opacity 1s ease-in, transform .5s ease-in;
+    transition: opacity 1s ease-in, transform .8s ease-in;
 }
 
 .slide-in.appear{
@@ -120,7 +97,7 @@ body, .navbar{
 
 
 .icon.appear{
-  animation: bounce 1.5s ease-out;
+  animation: bounce 2s ease-out;
 }
 
 
@@ -152,21 +129,21 @@ body, .navbar{
     padding-bottom: 9px;
   }
   80% {
-  	transform:translateY(-15%);
+  	transform:translateY(-20%);
   }
   90% {
   	transform:translateY(0%);
   	padding-bottom: 10px;
   }
   95% {
-  	transform:translateY(-7%);
+  	transform:translateY(-10%);
   }
   97% {
   	transform:translateY(0%);
   	padding-bottom: 11px;
   }
   99% {
-  	transform:translateY(-3%);
+  	transform:translateY(-5%);
   }
   100% {
   	transform:translateY(0);
@@ -186,3 +163,78 @@ body, .navbar{
 .jumbotron{
   min-height: 15rem;
 }
+
+
+
+//Contact Info
+
+.contact-form{
+  transition: all ease-in 2s;
+}
+
+.rotate{
+  transform: rotate(360deg);
+}
+
+.contact-form {
+
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 62%; 
+
+  margin-top: 3rem;
+  @include mquery ('s'){
+    width: 50%;
+    height: 60%;
+    left: 25%;
+    margin-top: 2rem;
+    padding: 1rem;
+    
+  }
+  @include mquery ('m'){
+    width: 50%;
+    left: 25%;
+    padding: 1rem;
+    height: 70%;
+    margin-top: 2rem;
+  }
+  @include mquery ('l'){
+    width: 50%;
+    height: 80%;
+    margin-top: 2rem;
+    left: 25%;
+    padding: 1rem;
+  }
+}
+
+#close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+  
+
+  .video{
+    opacity: 50%;
+    width: 100%;
+  }
+
+  
+  .contact-container{
+    background-color: white;
+    @include mquery ('m'){
+    margin-top: 3.5rem;
+    background-color: lighten($primary-color, 35%);
+    opacity: 75%;
+  }
+  @include mquery ('l'){
+    margin-top: 12.5rem;
+  
+  }
+  }
