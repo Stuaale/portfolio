@@ -57,7 +57,7 @@ body, .navbar{
 
 .fade-in{
   opacity: 0;
-  transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in-out;
 }
 
 .fade-in.appear {
@@ -89,9 +89,6 @@ body, .navbar{
 .slide-in.appear{
   transform: translate(0);
   opacity: 1;
-  &:hover{
-    transform: scale(1.01)
-  }
 
 }
 
@@ -168,75 +165,8 @@ body, .navbar{
 
 
 
-//Contact Info
-
-.contact-form{
-  transition: all ease-in 2s;
-}
-
-.rotate{
-  transform: rotate(360deg);
-}
-
-.contact-form {
-
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 62%; 
-
-  margin-top: 3rem;
-  @include mquery ('s'){
-    width: 50%;
-    height: 60%;
-    left: 25%;
-    margin-top: 2rem;
-    padding: 1rem;
-    
-  }
-  @include mquery ('m'){
-    width: 50%;
-    left: 25%;
-    padding: 1rem;
-    height: 70%;
-    margin-top: 2rem;
-  }
-  @include mquery ('l'){
-    width: 50%;
-    height: 80%;
-    margin-top: 2rem;
-    left: 25%;
-    padding: 1rem;
-  }
-}
-
-#close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.contact, .close{
   cursor: pointer;
 }
-  
 
-  .video{
-    opacity: 50%;
-    width: 100%;
-  }
 
-  
-  .contact-container{
-    background-color: white;
-    @include mquery ('m'){
-    margin-top: 3.5rem;
-    background-color: lighten($primary-color, 35%);
-    opacity: 75%;
-  }
-  @include mquery ('l'){
-    margin-top: 12.5rem;
-  
-  }
-  }
