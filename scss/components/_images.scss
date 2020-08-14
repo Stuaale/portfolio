@@ -37,8 +37,8 @@
 .logo-svg{
   stroke: $logo-color;
   stroke-width: 1;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
   animation: offset 5s linear forwards, fill-it 2s 5s forwards;
 }
 
