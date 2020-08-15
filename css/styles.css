@@ -136,7 +136,7 @@ body, .navbar {
 }
 
 .from-right, .from-left {
-  transition: opacity 1s ease-in, transform 0.8s ease-in;
+  transition: opacity 0.8s ease-in, transform 0.5s ease-in;
 }
 
 .slide-in.appear {
