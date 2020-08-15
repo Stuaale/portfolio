@@ -60,6 +60,7 @@ main {
   stroke-width: 1;
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
+  -webkit-animation: offset 5s linear forwards, fill-it 2s 5s forwards;
   animation: offset 5s linear forwards, fill-it 2s 5s forwards;
 }
 
